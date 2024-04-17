@@ -39,6 +39,21 @@ class Paper {
    * Builder.
    */
   public function __construct($id, $title, $type, $authors = []) {
+    $this->id = $id;
+    $this->title = $title;
+    $this->type = $type;
+    $this->authors = $authors;
   }
 
+  /**
+   * Show in String.
+   */
+  public function __toString() : string {
+    $string = "$this->id, $this->title, $this->type,";
+    foreach ($this->authors as $author) {
+      $string .= " $author";
+    }
+    return $string;
+  }
+  
 }
